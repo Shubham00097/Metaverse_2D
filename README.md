@@ -1,4 +1,4 @@
-# 🌐 Metaverse 2D  [Live Link](https://metaverse-2d-ten.vercel.app/)
+# 🌐 Metaverse 2D ![Live Link](https://metaverse-2d-ten.vercel.app)
 
 > A real-time, browser-based 2D virtual space where users can move avatars around a shared world, chat, react with emojis, and video call others nearby — all powered by WebSockets and WebRTC.
 
@@ -128,7 +128,7 @@ flowchart TD
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Shubham00097/Metaverse_2D.git
+git clone https://github.com/<your-username>/Metaverse_2D.git
 cd Metaverse_2D
 ```
 
@@ -242,14 +242,12 @@ The frontend will run on **http://localhost:3000**.
 
 ## 📸 Screenshots
 
-> _Screenshots coming soon — contribute by opening a PR!_
-
 | View | Preview |
 |---|---|
-| 🗺️ login  | `https://github.com/Shubham00097/Metaverse_2D/blob/main/screenshots/screenshot-login.png` |
-| 🏠 Lobby | `https://github.com/Shubham00097/Metaverse_2D/blob/main/screenshots/screenshot-lobby.png` |
-| room | `https://github.com/Shubham00097/Metaverse_2D/blob/main/screenshots/screenshot-room.png` |
-|📹 Proximity Video Call | `https://github.com/Shubham00097/Metaverse_2D/blob/main/screenshots/screenshot-video.png` |
+| 🗺️ Login | ![Login](https://raw.githubusercontent.com/Shubham00097/Metaverse_2D/main/screenshots/screenshot-login.png) |
+| 🏠 Lobby | ![Lobby](https://raw.githubusercontent.com/Shubham00097/Metaverse_2D/main/screenshots/screenshot-lobby.png) |
+| 🕹️ Room / Game Canvas | ![Room](https://raw.githubusercontent.com/Shubham00097/Metaverse_2D/main/screenshots/screenshot-room.png) |
+| 📹 Proximity Video Call | ![Proximity Video Call](https://raw.githubusercontent.com/Shubham00097/Metaverse_2D/main/screenshots/screenshot-video.png) |
 
 ---
 
@@ -271,7 +269,6 @@ The frontend will run on **http://localhost:3000**.
 ## 👨‍💻 Author
 
 **Shubham Kumar **
-
 - 🐙 GitHub: [GitHub](https://github.com/Shubham00097)
 - 💼 LinkedIn: [LinkedIn](https://www.linkedin.com/in/shubham-kumar-184584376)
 - 📧 Email: shubham10809@gmail.com
