@@ -11,9 +11,11 @@ dotenv.config()
 const server = http.createServer(app);
 
 
+const corsOrigin = process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.replace(/\/$/, "") : "*";
+
 const io = new Server(server, {
     cors: {
-        origin: process.env.CORS_ORIGIN,
+        origin: [corsOrigin, "http://localhost:3000"],
         credentials: true
     }
 })

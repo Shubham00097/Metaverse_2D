@@ -29,9 +29,10 @@ const login = async (req, res) => {
             { expiresIn: "7d" }
         );
         res.cookie("token", token, {
-            httpOnly: true,   // cannot access via JS (security)
-            secure: false,    // true in production (https)
-            sameSite: "lax"
+            httpOnly: true,
+            secure: true, // MUST be true for cross-domain in production
+            sameSite: "none", // MUST be none for cross-domain (Vercel to Render)
+            maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
         });
         res.status(200).json({
             message: "Login successful",
