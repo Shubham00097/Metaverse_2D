@@ -1,4 +1,4 @@
-# 🌐 Metaverse 2D ![Live Link](https://metaverse-2d-ten.vercel.app)
+# 🌐 Metaverse 2D [⚡ Live Demo ](https://metaverse-2d-ten.vercel.app)
 
 > A real-time, browser-based 2D virtual space where users can move avatars around a shared world, chat, react with emojis, and video call others nearby — all powered by WebSockets and WebRTC.
 
