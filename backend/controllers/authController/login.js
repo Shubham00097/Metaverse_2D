@@ -28,10 +28,11 @@ const login = async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: "7d" }
         );
+        const isProduction = process.env.NODE_ENV === "production";
         res.cookie("token", token, {
             httpOnly: true,
-            secure: true, // MUST be true for cross-domain in production
-            sameSite: "none", // MUST be none for cross-domain (Vercel to Render)
+            secure: isProduction, // true for production (HTTPS), false for local (HTTP)
+            sameSite: isProduction ? "none" : "lax", // none for cross-site prod, lax for local
             maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
         });
         res.status(200).json({
