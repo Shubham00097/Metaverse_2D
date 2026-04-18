@@ -246,7 +246,7 @@ The frontend will run on **http://localhost:3000**.
 
 | View | Preview |
 |---|---|
-| 🏠 Lobby | `[https://github.com/Shubham00097/Metaverse_2D/blob/main/screenshot-lobby.png]` |
+| 🏠 Lobby | `[https://github.com/Shubham00097/Metaverse_2D/blob/main/screenshots/screenshot-lobby.png]` |
 | 🗺️ Room / Game Canvas | `[screenshot-room.png]` |
 | 📹 Proximity Video Call | `[screenshot-video.png]` |
 | 💬 Chat Panel | `[screenshot-chat.png]` |
