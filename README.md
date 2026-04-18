@@ -270,11 +270,11 @@ The frontend will run on **http://localhost:3000**.
 
 ## 👨‍💻 Author
 
-**[Your Name]**
+**Shubham Kumar **
 
-- 🐙 GitHub: [@your-username](https://github.com/your-username)
-- 💼 LinkedIn: [your-linkedin](https://linkedin.com/in/your-linkedin)
-- 📧 Email: your@email.com
+- 🐙 GitHub: [GitHub](https://github.com/Shubham00097)
+- 💼 LinkedIn: [LinkedIn](https://www.linkedin.com/in/shubham-kumar-184584376)
+- 📧 Email: shubham10809@gmail.com
 
 ---
 
