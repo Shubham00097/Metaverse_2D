@@ -128,7 +128,7 @@ flowchart TD
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/Metaverse_2D.git
+git clone https://github.com/Shubham00097/Metaverse_2D.git
 cd Metaverse_2D
 ```
 
