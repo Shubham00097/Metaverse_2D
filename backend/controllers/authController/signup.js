@@ -42,7 +42,8 @@ const signup = async (req, res) => {
 
     res.status(201).json({
       message: "User created successfully",
-      userId: user._id
+      userId: user._id,
+      token: token // Return token for fallback storage
     });
 
   } catch (err) {

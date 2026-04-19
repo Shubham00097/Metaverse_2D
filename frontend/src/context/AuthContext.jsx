@@ -13,13 +13,18 @@ export const AuthProvider = ({ children }) => {
 
   const fetchMe = async () => {
     try {
+      const token = localStorage.getItem("auth_token");
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/me`, {
-        credentials: "include", // Important for cookies
+        headers: {
+          ...(token ? { "Authorization": `Bearer ${token}` } : {})
+        },
+        credentials: "include", // Keep for browsers that support it
       });
       if (res.ok) {
         const data = await res.json();
         setCurrentUser(data.user);
       } else {
+        localStorage.removeItem("auth_token");
         setCurrentUser(null);
       }
     } catch (err) {
@@ -43,6 +48,10 @@ export const AuthProvider = ({ children }) => {
     });
     
     if (res.ok) {
+      const data = await res.json();
+      if (data.token) {
+        localStorage.setItem("auth_token", data.token);
+      }
       await fetchMe();
       router.push("/lobby");
     }
@@ -58,6 +67,10 @@ export const AuthProvider = ({ children }) => {
     });
 
     if (res.ok) {
+      const data = await res.json();
+      if (data.token) {
+        localStorage.setItem("auth_token", data.token);
+      }
       await fetchMe();
       router.push("/lobby");
     }
@@ -65,27 +78,34 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
+    const token = localStorage.getItem("auth_token");
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/logout`, {
       method: "POST",
+      headers: {
+        ...(token ? { "Authorization": `Bearer ${token}` } : {})
+      },
       credentials: "include",
     });
-    if (res.ok) {
-      setCurrentUser(null);
-      router.push("/login");
-    }
+    localStorage.removeItem("auth_token");
+    setCurrentUser(null);
+    router.push("/login");
   };
 
   const updateAvatar = async (colorHex) => {
+    const token = localStorage.getItem("auth_token");
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/avatar`, {
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        ...(token ? { "Authorization": `Bearer ${token}` } : {})
+      },
       body: JSON.stringify({ avatar: colorHex }),
       credentials: "include"
     });
 
     if (res.ok) {
       const data = await res.json();
-      setCurrentUser(data.user); // update local state with new user object
+      setCurrentUser(data.user);
     }
     return res;
   };

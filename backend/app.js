@@ -10,12 +10,25 @@ dotenv.config()
 const app = express();
 
 // Handle CORS carefully for production
-const corsOrigin = process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.replace(/\/$/, "") : "*";
+const allowedOrigins = [
+    process.env.CORS_ORIGIN?.replace(/\/$/, ""),
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+].filter(Boolean);
 
 app.use(cors({
-    origin: [corsOrigin, "http://localhost:3000"], // Allow both production and local dev
+    origin: function (origin, callback) {
+        // allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes("*")) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }))
 
 app.use(express.json({limit:"16kb"}))
